@@ -1,0 +1,80 @@
+<html>
+<head>
+	<title>RossCol</title>
+	<style>
+	body{
+		background: #97B8D5;
+	}
+	h1{
+		text-align: center;
+		color: white;
+		}
+	h3{ 
+		text-align: center;
+		color: white;
+	}
+	p{
+		color: white;
+	}
+	.ans{
+  		text-align:center;
+		}
+	.ans > input{
+  		text-align:left;
+	}
+
+	</style>
+</head>
+<body>
+
+	<h1> What you could have done in this amount of time </h1>
+	<h3>How many minutes have you spent doing nothing?</h3><br><br> 
+	<div class="ans">
+
+	<input id="time" type="text" value="" autocomplete="off">
+	
+	<button onclick ="calc()">Enter</button>
+	<h3 id="print"></h3>
+	<script>
+		function calc(){
+			var text;
+			var mins = document.getElementById("time").value;
+			
+		
+		switch(true){
+			case (mins < 1):
+				text= "entered a number greater than 0 to get a better answer.";
+				break;
+			case (mins <= 5):
+				text =" learned how to do the Stanky Leg.";
+				break;
+			case (mins > 5 && mins <=10 ):
+				text =" made a sandwich and ate it.";
+				break;
+			case (mins > 10 && mins <=20):
+				text =" called a family member to see how they are.";
+				break;
+			case (mins > 20 && mins <=30):
+				text =" watched a tv program.";
+				break;
+			case (mins > 30 && mins <=40):
+				text =" listened to 10 songs.";
+				break;
+			case (mins > 50 && mins <=60):
+				text =" searched a cute new outfit for your next night out.";
+				break;
+			case (mins > 60):
+				text =" had a nap.";
+				break;
+
+			default:
+			text = " watched a cat video on Youtube";
+		}
+		document.getElementById("print").innerHTML = "In this amount of time you could have " + text + "<br><br> Now back to work!";
+
+	}
+
+	</script>
+</div>
+</body>
+</html>
