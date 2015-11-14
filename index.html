@@ -40,41 +40,36 @@
 			var text;
 			var mins = document.getElementById("time").value;
 			
-		//Add a new array to pull a response from. 
-		// eg. things4 = responses for over 7 minutes.
-		var things = ["looked at how beautiful this code is.", 
-					  "attempted to think of a good way to display this...",
-					  "taken into account that a tomato is a fruit "  // < 2
-					  ];
-		var things2	=["edited code that wasn't yours. :'(",
-					  "tried something to talk back to Ross.",
-					  "created a GitHub to share the love!" //< 2 > 4
-					  ];
-		var things3	=["thought of this sentence because you're not creative.",
-					  "tried to sleep because it's 05:33",
-					  "wondered where you went wrong and ended up here..." // < 4 > 7
-					  ];
-
-		//Add if statements for each new array added.
-
-		if(isNaN(mins) != false){
-			var show = "realised that the question asks for a number, not a word.";
-		}
-		else if(mins < 0){
-			var show = "thought of a positive number for this generator.";
-		}
-		else if(mins <= 0 || mins == ""){
-			var show = "thought of a more creative number for this generator.";
-		}
-		else if(mins < 2 && mins > 0){
-			var show = things[Math.floor(Math.random() * things.length)];
-		}else if(mins >= 2 && mins < 4){
-			var show = things2[Math.floor(Math.random() * things2.length)];
-		}else if(mins >= 4 && mins < 7){
-			var show = things3[Math.floor(Math.random() * things3.length)];
-		}
 		
-		text = show;
+		switch(true){
+			case (mins < 1):
+				text= "entered a number greater than 0 to get a better answer.";
+				break;
+			case (mins <= 5):
+				text =" learned how to do the Stanky Leg.";
+				break;
+			case (mins > 5 && mins <=10 ):
+				text =" made a sandwich and ate it.";
+				break;
+			case (mins > 10 && mins <=20):
+				text =" called a family member to see how they are.";
+				break;
+			case (mins > 20 && mins <=30):
+				text =" watched a tv program.";
+				break;
+			case (mins > 30 && mins <=40):
+				text =" listened to 10 songs.";
+				break;
+			case (mins > 50 && mins <=60):
+				text =" searched a cute new outfit for your next night out.";
+				break;
+			case (mins > 60):
+				text =" had a nap.";
+				break;
+
+			default:
+			text = " watched a cat video on Youtube";
+		}
 		document.getElementById("print").innerHTML = "In this amount of time you could have " + text + "<br><br> Now back to work!";
 
 	}
